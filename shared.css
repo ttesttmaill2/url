@@ -1,0 +1,226 @@
+/* إعدادات عامة */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #333; /* الهيدر باللون الرمادي الداكن */
+    color: #fff;
+    padding: 10px 20px; /* تحسين المسافة داخل الهيدر */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* إضافة ظل */
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* تغيير حجم الخط لاسم الموقع */
+header h1 {
+    margin: 0;
+    font-size: 24px; /* تحسين حجم الخط */
+    font-weight: bold;
+}
+
+/* ترتيب الهيدر على الكمبيوتر */
+@media (min-width: 769px) {
+    header .container {
+        flex-direction: row-reverse; /* عكس ترتيب العناصر في الهيدر */
+    }
+}
+
+/* ترتيب الهيدر على الموبايل */
+@media (max-width: 768px) {
+    header .container {
+        flex-direction: row; /* إبقاء ترتيب العناصر كما هو على الموبايل */
+    }
+
+    /* إخفاء القائمة الرئيسية على الموبايل */
+    .desktop-menu {
+        display: none;
+    }
+
+    /* إظهار زر الثلاثة شرائط */
+    .mobile-menu-icon {
+        display: flex; /* إظهار زر القائمة */
+    }
+    
+    /* عند التبديل، تظهر القائمة */
+    .mobile-menu.show {
+        display: flex !important; /* إظهار القائمة عند إضافة الفئة 'show' */
+    }
+}
+
+/* قائمة سطح المكتب */
+.desktop-menu {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.desktop-menu li {
+    margin: 0 12px; /* تحسين المسافة بين العناصر */
+}
+
+.desktop-menu a {
+    color: #fff;
+    text-decoration: none;
+    padding: 8px 16px; /* تحسين الحشو داخل الروابط */
+    background-color: #4CAF50; /* اللون الأخضر الأساسي */
+    border-radius: 5px;
+    font-size: 14px; /* تحسين حجم الخط */
+    transition: background-color 0.3s ease;
+}
+
+.desktop-menu a:hover,
+.desktop-menu a.active {
+    background-color: #388E3C; /* اللون الأخضر عند التحويم */
+}
+
+/* قائمة الموبايل */
+.mobile-menu-icon {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.mobile-menu-icon span {
+    background-color: #fff;
+    height: 3px;
+    width: 25px;
+    margin: 4px 0;
+    border-radius: 3px;
+}
+
+.mobile-menu {
+    list-style: none;
+    display: none; /* مخفية افتراضيًا */
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background-color: rgba(0, 0, 0, 0.9); /* خلفية شفافة مع تأثير اللون الأسود */
+    border-radius: 8px;
+    width: 200px;
+    z-index: 1000;
+}
+
+.mobile-menu li {
+    text-align: center;
+    margin: 5px 0;
+}
+
+.mobile-menu a {
+    color: #fff;
+    text-decoration: none;
+    padding: 12px; /* تحسين الحشو داخل الروابط */
+    display: block;
+    background-color: #4CAF50; /* اللون الأخضر الأساسي */
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.mobile-menu a:hover,
+.mobile-menu a.active {
+    background-color: #388E3C; /* اللون الأخضر عند التحويم */
+}
+
+/* إعدادات التفاعل */
+@media (max-width: 768px) {
+    .desktop-menu {
+        display: none; /* إخفاء قائمة سطح المكتب */
+    }
+
+    .mobile-menu-icon {
+        display: flex; /* إظهار زر القائمة */
+    }
+    
+    .mobile-menu.show {
+        display: flex !important; /* إظهار القائمة عند إضافة الفئة 'show' */
+    }
+}
+
+@media (min-width: 769px) {
+    .mobile-menu {
+        display: none !important; /* إخفاء قائمة الموبايل */
+    }
+}
+
+/* اسم الصفحة */
+.page-title {
+    color: #4CAF50; /* اللون الأخضر */
+    font-size: 26px;
+    text-align: center;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+/* تنسيق الأقسام */
+.category {
+    margin: 20px 0;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.category h2 {
+    color: #4CAF50; /* اللون الأخضر للعناوين */
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.category ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.category ul li {
+    background-color: #f9f9f9;
+    margin: 10px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    flex: 1 1 calc(25% - 20px); /* لضمان أن كل عنصر يأخذ 25% من العرض مع المسافة */
+    box-sizing: border-box;
+}
+
+.category ul li:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.category ul li a {
+    color: #333;
+    text-decoration: none;
+    font-size: 18px;
+    display: block;
+    text-align: center;
+}
+
+.category ul li a:hover {
+    color: #4CAF50; /* اللون الأخضر عند التحويم */
+}
+
+/* استجابة لمقاسات الشاشة الصغيرة */
+@media (max-width: 768px) {
+    .category ul li {
+        flex: 1 1 calc(50% - 20px); /* لضمان أن كل عنصر يأخذ 50% من العرض في الشاشات الصغيرة */
+    }
+}
